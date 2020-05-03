@@ -4,10 +4,11 @@ import hashlib
 
 class S2(object):
     def __init__(self):
-        self.__sol1 = "e655177b9ac3ddfe4328ef97e53f097c0e911ef771310f7cc55e6f31"
+        self.__sol1 = "90bbaa0bc5b96d1ea6b4624b5ddebef169be0ed1917c270ebe182182"
         self.__sol2 = "929dd9980f7d25444f148767550b1f5396d8b5e09f1b9ffd9b067d56"
         
     def p1(self, res, verbose=True):
+        val = np.round(res, decimals=2)
         code = hashlib.sha224(str(res).encode('utf-8')).hexdigest()
         if verbose:
             if code==self.__sol1:
