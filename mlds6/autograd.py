@@ -9,7 +9,7 @@ class S2(object):
         
     def p1(self, res, verbose=True):
         val = np.round(res, decimals=2)
-        code = hashlib.sha224(str(res).encode('utf-8')).hexdigest()
+        code = hashlib.sha224(str(val).encode('utf-8')).hexdigest()
         if verbose:
             if code==self.__sol1:
                 print("Correcto")
