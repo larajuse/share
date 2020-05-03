@@ -18,7 +18,7 @@ class S2(object):
             return code==self.__sol1
         
     def p2(self, model, verbose=True):
-        my_str = my_str = str(model.layers[0].units)+str("sigmoid" in str(model.layers[0].activation))+model.loss
+        my_str = str(model.layers[0].units)+str("sigmoid" in str(model.layers[0].activation))+model.loss
         code = hashlib.sha224(str(my_str).encode('utf-8')).hexdigest()
         if verbose:
             if code==self.__sol2:
