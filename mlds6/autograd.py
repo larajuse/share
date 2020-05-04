@@ -69,7 +69,8 @@ class S3(object):
                 "relu" in str(model.layers[1].activation),
                 "softmax" in str(model.layers[2].activation),
                 "categorical_crossentropy" in str(model.loss)]
-        code = "".join(map(str, vals))
+        my_str = "".join(map(str, vals))
+        code = hashlib.sha224(str(my_str).encode('utf-8')).hexdigest()
         if verbose:
             if code==self.__sol3:
                 print("Correcto")
