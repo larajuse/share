@@ -68,8 +68,7 @@ class S3(object):
                 model.output_shape[1], model.layers[1].units,
                 "relu" in str(model.layers[1].activation),
                 "softmax" in str(model.layers[2].activation),
-                "categorical_crossentropy" in str(model.loss),
-                "CategoricalAccuracy" in str(model.metrics)]
+                "categorical_crossentropy" in str(model.loss)]
         code = "".join(map(str, vals))
         if verbose:
             if code==self.__sol3:
