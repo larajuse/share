@@ -1,6 +1,7 @@
 import numpy as np
 import tensorflow as tf
 import hashlib
+from functools import reduce
 
 class S2(object):
     def __init__(self):
