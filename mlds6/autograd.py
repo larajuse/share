@@ -30,7 +30,7 @@ class S2(object):
             return code==self.__sol2
 
 class S3(object):
-    def __init__(self, trials):
+    def __init__(self):
         self.__and_gt = lambda i: i[0] and i[1]
         self.__or_gt = lambda i: i[0] or i[1]
         self.__sol3 = "929dd9980f7d25444f148767550b1f5396d8b5e09f1b9ffd9b067d56"
