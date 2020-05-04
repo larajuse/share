@@ -76,4 +76,4 @@ class S3(object):
             else:
                 print("Incorrecto")
         else:
-            return code==self.__sol1
+            return code==self.__sol3
