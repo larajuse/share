@@ -78,3 +78,35 @@ class S3(object):
                 print("Incorrecto")
         else:
             return code==self.__sol3
+
+class S4(object):
+    def __init__(self):
+        self.__sol1 = "bfeab503b401212d39da72aba0ec1f87e9ac823922f15a2356530b55"
+        self.__sol2 = "023a1d17f1ada1cd2ad39c3809f45e10991cb841f272b770c9590af2"
+        
+    def p1(self, model, verbose=True):
+        vals = ["Sequential" in str(model), model.input_shape[1],
+                model.output_shape[1], model.layers[0].units, model.layers[1].units,
+                "relu" in str(model.layers[0].activation),
+                "softmax" in str(model.layers[1].activation),
+                "categorical_crossentropy" in str(model.loss)]
+        my_str = "".join(map(str, vals))
+        code = hashlib.sha224(str(my_str).encode('utf-8')).hexdigest()
+        if verbose:
+            if code==self.__sol1:
+                print("Correcto")
+            else:
+                print("Incorrecto")
+        else:
+            return code==self.__sol1
+    def p2(self, res, verbose=True):
+        np.sort(res)
+        val = np.round(res, decimals=2)
+        code = hashlib.sha224(str(val).encode('utf-8')).hexdigest()
+        if verbose:
+            if code==self.__sol2:
+                print("Correcto")
+            else:
+                print("Incorrecto")
+        else:
+            return code==self.__sol2
